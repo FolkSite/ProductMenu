@@ -8,7 +8,7 @@
  *
  * ProductMenu is free software; you can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
- * Foundation; either version 2 of the License, or (at your option) any later
+ * Foundation; either version 3 of the License, or (at your option) any later
  * version.
  *
  * ProductMenu is distributed in the hope that it will be useful, but WITHOUT ANY
@@ -196,6 +196,7 @@ unset($vehicle,$menu);
 
 /* now pack in the license file, readme and setup options */
 $builder->setPackageAttributes(array(
+    'changelog' => file_get_contents($sources['docs'] . 'changelog.txt'),
     'license' => file_get_contents($sources['docs'] . 'license.txt'),
     'readme' => file_get_contents($sources['docs'] . 'readme.txt'),
     //'setup-options' => array(

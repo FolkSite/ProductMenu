@@ -27,7 +27,7 @@ $_lang['productmenu.clear_filter'] = 'Clear Filter';
 //Dashes
 $_lang['productmenu.dash'] = 'Product';
 $_lang['productmenu.dashes'] = 'Products';
-$_lang['productmenu.intro_msg'] = 'Intro Msg';
+$_lang['productmenu.intro_msg'] = 'Simple product management.';
 $_lang['productmenu.update_dash'] = 'Update Product';
 $_lang['productmenu.remove_dash'] = 'Remove Product';
 $_lang['productmenu.create_dash'] = 'Create Product';
