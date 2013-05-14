@@ -54,7 +54,7 @@ foreach ($categories as $cat) {
     }
 
     // extend category for dashes render
-    $cat['dashes'] = implode($outputSeparator, $output_dashes);
+    $cat['products'] = implode($outputSeparator, $output_dashes);
 
     // render category with dashes
     $output[] = $ProductMenu->getChunk($tpl, $cat);

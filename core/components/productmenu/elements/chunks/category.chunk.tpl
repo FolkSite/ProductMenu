@@ -1,10 +1,14 @@
 <h2>[[+name]]</h2>
 <table>
+  <thead>
     <tr>
         <th>Name</th>
         <th>Dimensions</th>
         <th>Requirements</th>
         <th>Price</th>
     </tr>
-    [[+dashes]]
+  </thead>
+  <tbody>
+    [[+products]]
+  </tbody>
 </table>
