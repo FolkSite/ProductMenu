@@ -1,6 +1,6 @@
 <?php
 /**
- * Properties English Lexicon Entries for ProductMenu
+ * Properties English Lexicon for ProductMenu
  *
  * @package productmenu
  * @subpackage lexicon

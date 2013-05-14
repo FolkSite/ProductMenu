@@ -1,6 +1,6 @@
 <?php
 /**
- * Default English Lexicon Entries for ProductMenu
+ * Default English Lexicon for ProductMenu
  *
  * @package productmenu
  * @subpackage lexicon

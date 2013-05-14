@@ -12,6 +12,7 @@ $output = array();
 // set variables
 $tpl = $modx->getOption('tpl', $scriptProperties, 'pmCategory');
 $itemTpl = $modx->getOption('itemTpl', $scriptProperties, 'pmProduct');
+$decimals = (int) $modx->getOption('decimals', $scriptProperties, 2);
 
 $outputSeparator = $modx->getOption('outputSeparator', $scriptProperties, "\n");
 $toPlaceholder = $modx->getOption('toPlaceholder', $scriptProperties, false);
@@ -43,11 +44,11 @@ foreach ($categories as $cat) {
 
 	$idx = 0;
 	foreach ($dashes as $dash) {
-		 $idx+=1;
-		 $dash = $dash->toArray();
-		 $dash['idx'] = $idx;
-		 $dash['current_price'] = (float) $dash['sale_price'] ? $dash['sale_price'] : $dash['price'];
-		 $dash['old_price'] = $dash['sale_price'] ? (float) $dash['price'] : '';
+		$idx+=1;
+		$dash = $dash->toArray();
+		$dash['idx'] = $idx;
+		$dash['current_price'] = $dash['sale_price'] ? $dash['sale_price'] : number_format($dash['price'], $decimals);
+		$dash['old_price'] = $dash['sale_price'] ? number_format($dash['price'], $decimals) : '';
 
         // render dash
         $output_dashes[] = $ProductMenu->getChunk($itemTpl, $dash);
