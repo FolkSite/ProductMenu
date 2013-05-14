@@ -1,11 +1,9 @@
 --------------------
 ProductMenu
 --------------------
-Version: 0.0.2
-Author: Jan Peca <pecajan@gmail.com>
+Version: 1.0.0
+Author: Oleg Pryadko <oleg@websitezen.com>
+ProductMenu is a modified version of FoodMenu (taken 5/12/2013 from https://github.com/COEXCZ/FoodMenu)
 --------------------
 
-A basic Extra for MODx Revolution.
-
-Feel free to suggest ideas/improvements/bugs on GitHub:
-http://github.com/theboxer/ProductMenu/issues
+Very simple product management for MODx Revolution.
