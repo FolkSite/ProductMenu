@@ -10,8 +10,8 @@ if (!($ProductMenu instanceof ProductMenu)) return '';
 $output = array();
 
 // set variables
-$tpl = $modx->getOption('tpl', $scriptProperties, 'DashCategory');
-$itemTpl = $modx->getOption('itemTpl', $scriptProperties, 'Dash');
+$tpl = $modx->getOption('tpl', $scriptProperties, 'pmCategory');
+$itemTpl = $modx->getOption('itemTpl', $scriptProperties, 'pmProduct');
 
 $outputSeparator = $modx->getOption('outputSeparator', $scriptProperties, "\n");
 $toPlaceholder = $modx->getOption('toPlaceholder', $scriptProperties, false);
@@ -46,6 +46,8 @@ foreach ($categories as $cat) {
 		 $idx+=1;
 		 $dash = $dash->toArray();
 		 $dash['idx'] = $idx;
+		 $dash['current_price'] = (float) $dash['sale_price'] ? $dash['sale_price'] : $dash['price'];
+		 $dash['old_price'] = $dash['sale_price'] ? (float) $dash['price'] : '';
 
         // render dash
         $output_dashes[] = $ProductMenu->getChunk($itemTpl, $dash);

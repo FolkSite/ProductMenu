@@ -33,7 +33,7 @@ $snippets[0]= $modx->newObject('modSnippet');
 $snippets[0]->fromArray(array(
     'id' => 0,
     'name' => 'ProductMenu',
-    'description' => 'Displays Dashes.',
+    'description' => 'Displays products.',
     'snippet' => getSnippetContent($sources['source_core'].'/elements/snippets/ProductMenu.snippet.php'),
 ),'',true,true);
 $properties = include $sources['build'].'properties/properties.productmenu.php';

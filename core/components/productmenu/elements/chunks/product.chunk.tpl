@@ -2,5 +2,5 @@
     <td>[[+name]]</td>
     <td>[[+dimensions]]</td>
     <td>[[+requirements]]</td>
-    <td><del>[[+price]]</del> [[+sale_price]]</td>
+    <td>[[+old_price:notempty=`<del>[[+old_price]]</del>`]] [[+current_price]]</td>
 </tr>

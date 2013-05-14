@@ -14,7 +14,7 @@ $chunks = array();
 $chunks[1]= $modx->newObject('modChunk');
 $chunks[1]->fromArray(array(
     'id' => 1,
-    'name' => 'DashCategory',
+    'name' => 'pmCategory',
     'description' => '',
     'snippet' => getChunkContent($sources['chunks'].'category.chunk.tpl'),
 ),'',true,true);
@@ -22,9 +22,9 @@ $chunks[1]->fromArray(array(
 $chunks[2]= $modx->newObject('modChunk');
 $chunks[2]->fromArray(array(
     'id' => 2,
-    'name' => 'Dash',
+    'name' => 'pmProduct',
     'description' => '',
-    'snippet' => getChunkContent($sources['chunks'].'dash.chunk.tpl'),
+    'snippet' => getChunkContent($sources['chunks'].'product.chunk.tpl'),
 ),'',true,true);
 
 return $chunks;
