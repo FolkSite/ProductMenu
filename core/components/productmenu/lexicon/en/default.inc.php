@@ -19,7 +19,6 @@ $_lang['productmenu.item_err_save'] = 'An error occurred while trying to save th
 $_lang['productmenu.item_remove'] = 'Remove Item';
 $_lang['productmenu.item_remove_confirm'] = 'Are you sure you want to remove this Item?';
 $_lang['productmenu.item_update'] = 'Update Item';
-$_lang['productmenu.intro_msg'] = 'Manage your items.';
 $_lang['productmenu.search...'] = 'Search...';
 $_lang['productmenu.search'] = 'Search';
 $_lang['productmenu.clear_filter'] = 'Clear Filter';
@@ -27,13 +26,13 @@ $_lang['productmenu.clear_filter'] = 'Clear Filter';
 //Dashes
 $_lang['productmenu.dash'] = 'Product';
 $_lang['productmenu.dashes'] = 'Products';
-$_lang['productmenu.intro_msg'] = 'Simple product management.';
+$_lang['productmenu.intro_msg'] = 'Manage products.';
 $_lang['productmenu.update_dash'] = 'Update Product';
 $_lang['productmenu.remove_dash'] = 'Remove Product';
 $_lang['productmenu.create_dash'] = 'Create Product';
 $_lang['productmenu.remove_dash_confirm'] = 'Are you sure you want to permanently remove this product?';
 $_lang['productmenu.name'] = 'Name';
-$_lang['productmenu.description'] = 'Help Text';
+$_lang['productmenu.description'] = 'Description';
 $_lang['productmenu.category'] = 'Category';
 $_lang['productmenu.price'] = 'Price';
 $_lang['productmenu.sale_price'] = 'Sale Price';
@@ -47,7 +46,9 @@ $_lang['productmenu.select_category'] = 'Select Category';
 
 
 //Categories
+$_lang['productmenu.category'] = 'Category';
 $_lang['productmenu.categories'] = 'Categories';
+$_lang['productmenu.categories.intro_msg'] = 'Manage product categories';
 $_lang['productmenu.categories.update_category'] = 'Update Category';
 $_lang['productmenu.categories.create_category'] = 'Create Category';
 $_lang['productmenu.categories.remove_category'] = 'Remove Category';
