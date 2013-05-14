@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="productmenu" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="productmenu">
+    <object class="ProductMenuDash" table="productmenu_dashes" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="category" dbtype="int" phptype="int" null="false" default="" />
+        <field key="description" dbtype="text" phptype="text" null="true" />
+        <field key="price" dbtype="decimal" precision="10,2" phptype="float" null="false" />
+        <field key="sale_price" dbtype="decimal" precision="10,2" phptype="float" null="false" />
+        <field key="dimensions" dbtype="varchar" precision="32" phptype="varchar" null="true" />
+        <field key="requirements" dbtype="varchar" precision="32" phptype="varchar" null="true" />
+        <field key="feature" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+        <field key="image" dbtype="varchar" precision="128" phptype="string" null="false" default="" />
+        <field key="position" dbtype="int" precision="10" phptype="integer" null="false"/>
+
+        <aggregate alias="Category" class="ProductMenuCategory" local="category" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+
+    <object class="ProductMenuCategory" table="productmenu_categories" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="position" dbtype="int" precision="10" phptype="integer" null="false"/>
+
+        <composite alias="Dashes" class="ProductMenuDash" local="id" foreign="category" cardinality="many" owner="local" />
+
+    </object>
+</model>

@@ -1,0 +1,10 @@
+<h2>[[+name]]</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Dimensions</th>
+        <th>Requirements</th>
+        <th>Price</th>
+    </tr>
+    [[+dashes]]
+</table>
