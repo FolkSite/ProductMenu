@@ -13,6 +13,9 @@ $output = array();
 $tpl = $modx->getOption('tpl', $scriptProperties, 'pmCategory');
 $itemTpl = $modx->getOption('itemTpl', $scriptProperties, 'pmProduct');
 $decimals = (int) $modx->getOption('decimals', $scriptProperties, 2);
+$img_url = (int) $modx->getOption('img_url', $scriptProperties, '');
+$free_text = $modx->getOption('free_text', $scriptProperties, 'Not Available');
+$currency = $modx->getOption('currency', $scriptProperties, '$');
 
 $outputSeparator = $modx->getOption('outputSeparator', $scriptProperties, "\n");
 $toPlaceholder = $modx->getOption('toPlaceholder', $scriptProperties, false);
@@ -47,9 +50,27 @@ foreach ($categories as $cat) {
 		$idx+=1;
 		$dash = $dash->toArray();
 		$dash['idx'] = $idx;
-		$dash['current_price'] = $dash['sale_price'] ? $dash['sale_price'] : number_format($dash['price'], $decimals);
-		$dash['old_price'] = $dash['sale_price'] ? number_format($dash['price'], $decimals) : '';
-
+		$dash['image'] = $dash['image'] ? $img_url.$dash['image'] : '';
+		if ($dash['sale_price']) {
+			$current = $dash['sale_price'];
+			$old = $dash['price'];
+		} else {
+			$current = $dash['price'];
+			$old = '';
+		}
+		if (!$current) {
+			$current = $free_text;
+		}
+		if ($current && is_numeric($current)) {
+			$current = number_format($current, $decimals);
+			$current = $currency.strval($current);
+		}
+		if ($old && is_numeric($old)) {
+			$old = number_format($old, $decimals);
+			$old = $currency.strval($old);
+		}
+		$dash['current_price'] = $current;
+		$dash['old_price'] = $old;
         // render dash
         $output_dashes[] = $ProductMenu->getChunk($itemTpl, $dash);
     }
