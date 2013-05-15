@@ -42,19 +42,21 @@ function createSetting(&$modx,$key,$value) {
         $setting->save();
     }
 }
-if ($object->xpdo) {
-    switch ($options[xPDOTransport::PACKAGE_ACTION]) {
-        case xPDOTransport::ACTION_INSTALL:
-        case xPDOTransport::ACTION_UPGRADE:
-            $modx =& $object->xpdo;
-
-            /* setup paths */
-            createSetting($modx,'core_path',$modx->getOption('core_path').'components/productmenu/');
-            createSetting($modx,'assets_path',$modx->getOption('assets_path').'components/productmenu/');
-
-            /* setup urls */
-            createSetting($modx,'assets_url',$modx->getOption('assets_url').'components/productmenu/');
-        break;
-    }
-}
+// These should not be absolute (to help site migration).
+// These should be left out in production packages.
+//if ($object->xpdo) {
+//    switch ($options[xPDOTransport::PACKAGE_ACTION]) {
+//        case xPDOTransport::ACTION_INSTALL:
+//        case xPDOTransport::ACTION_UPGRADE:
+//            $modx =& $object->xpdo;
+//
+//            /* setup paths */
+//            createSetting($modx,'core_path', '{core_path}components/productmenu/');
+//            createSetting($modx,'assets_path', '{assets_path}components/productmenu/');
+//
+//            /* setup urls */
+//            createSetting($modx,'assets_url', '{assets_url}components/productmenu/');
+//        break;
+//    }
+//}
 return true;

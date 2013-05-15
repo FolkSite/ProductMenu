@@ -29,15 +29,21 @@
  */
 $settings = array();
 
-/*
-$settings['gallery.']= $modx->newObject('modSystemSetting');
-$settings['gallery.']->fromArray(array(
-    'key' => 'gallery.',
-    'value' => '',
-    'xtype' => 'textfield',
-    'namespace' => 'gallery',
-    'area' => '',
-),'',true,true);
-*/
+
+$config = array(
+	array(
+		'key' => 'productmenu.default_image_url',
+		'value' => '',
+		'xtype' => 'textfield',
+		'namespace' => 'productmenu',
+		'area' => '',
+	)
+);
+
+foreach ($config as $vals) {
+	$setting = $modx->newObject('modSystemSetting');
+	$setting->fromArray($vals,'',true,true);
+	$settings[$vals['key']] = $setting;
+}
 
 return $settings;
